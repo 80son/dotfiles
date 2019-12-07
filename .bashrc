@@ -117,13 +117,6 @@ neofetch
 
 alias sl=ls
 
-#Udacity Git additions
-#Enable tab completion
-source ~/.udacity-terminal-config/git-completion.bash
-
-#Change command prompt
-source ~/.udacity-terminal-config/git-prompt.sh
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # '\u' adds the name of the current user to the prompt
