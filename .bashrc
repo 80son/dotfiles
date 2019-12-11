@@ -72,6 +72,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+	tmux attached -t default || tmux new -s default
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -117,11 +121,18 @@ neofetch
 
 alias sl=ls
 
+#Udacity Git additions
+#Enable tab completion
+#source ~/.udacity-terminal-config/git-completion.bash
+
+#Change command prompt
+#source ~/.udacity-terminal-config/git-prompt.sh
+
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # '\u' adds the name of the current user to the prompt
 # '\$(__git_ps1)' adds git-related stuff
 # '\W' adds the name of the current directory
-export PS1="$red[\u$green@\H$blue \W]\$(__git_ps1)$ $reset"
+export PS1="$red[\u$green@\H$blue \W]\$reset"
 
 
